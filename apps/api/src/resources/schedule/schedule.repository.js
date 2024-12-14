@@ -2,13 +2,7 @@ import { pgClient } from '../../config/db.config.js';
 
 export async function getAllLessons() {
   try {
-    const query = {
-      text: 'SELECT * FROM lessons;',
-      rowMode: 'array'
-    }
-
-    console.log('> Fetching lessons...');
-    const result = await pgClient.query(query);
+    const result = await pgClient.query('SELECT * FROM lessons;');
     
     return result.rows;
 
