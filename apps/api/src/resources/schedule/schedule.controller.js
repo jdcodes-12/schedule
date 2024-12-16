@@ -21,7 +21,13 @@ export async function listLessons(req, res) {
 
 export async function saveSchedule(req, res) {
   try {
-    return res.status(201).json({ message: 'Schedule saved.'});
+    const { original, snapshot } = req.body;
+
+    await service.saveSchedule(original, snapshot);
+    
+    return res.status(201).json({ 
+      message: 'Schedule saved.'
+    });
     
   } catch (err) {
     console.error(err);
