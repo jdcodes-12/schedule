@@ -16,3 +16,14 @@ export const getLessons = async () => (
     else console.error('Unexpected Error: ', error);
   })
 )
+
+export const saveSchedule = async (original, snapshot) => {
+  await fetch(`${apiBaseURL}/schedule/save`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      original: Object.fromEntries(original),
+      snapshot: Object.fromEntries(snapshot)
+    })
+  });
+}

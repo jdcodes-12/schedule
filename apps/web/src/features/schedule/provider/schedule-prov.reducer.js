@@ -4,7 +4,7 @@ export const ACTION = {
 }
 
 export const initState = {
-  lessons: [],
+  blocks: [],
   snapshot: new Map(),
 }
 
@@ -13,11 +13,14 @@ export const scheduleReducer = (state, action) => {
   
   switch (type) {
     case ACTION.INIT_SCHEDULE: {
-      const { lessons } = payload;
-
+      const { scheduleBlocks } = payload;
+      
       return {
-        ...state, 
-        lessons
+        ...state,
+        blocks: scheduleBlocks,
+        snapshot: new Map(
+          scheduleBlocks.map(({ block, lessons }) => [block, lessons])
+        )
       }
     }
 

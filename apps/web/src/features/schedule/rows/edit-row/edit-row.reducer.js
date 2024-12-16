@@ -8,8 +8,8 @@ export const initState = (lesson) => ({
   time_slot: lesson?.time_slot,
   subject: lesson?.name,
   location: lesson?.location,
-  primary_instructor: lesson?.primary_instructor,
-  guest_instructor: lesson?.guest_instructor,
+  primary_instructor: lesson?.primary_instructor_name,
+  guest_instructor: lesson?.guest_instructor_name,
   equipment: lesson?.uniform_and_equipment
 });
 

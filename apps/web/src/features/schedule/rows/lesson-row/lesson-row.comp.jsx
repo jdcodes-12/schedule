@@ -10,14 +10,14 @@ export default function LessonRow({ lesson }) {
     <EditRow lesson={lesson} toggleEditMode={toggleEditMode} /> 
   ) : (
     <tr className='schedule-row'>
-      <td>{lesson.date}</td>
-      <td>{lesson.training_day}</td>
-      <td>{lesson.time_slot}</td>
-      <td>{lesson.subject}</td>
-      <td>{lesson.location}</td>
-      <td>{lesson.primary_instructor}</td>
-      <td>{lesson.guest_instructor}</td>
-      <td>{lesson.equipment}</td>
+      <td>{lesson?.date}</td>
+      <td>{lesson?.training_day}</td>
+      <td>{lesson?.time_slot}</td>
+      <td>{lesson?.name}</td>
+      <td>{lesson?.location}</td>
+      <td>{lesson?.primary_instructor_name}</td>
+      <td>{lesson?.guest_instructor_name}</td>
+      <td>{lesson?.uniform_and_equipment}</td>
       <td>
         <button onClick={toggleEditMode}>
           E
